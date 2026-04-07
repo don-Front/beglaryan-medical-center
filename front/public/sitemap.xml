@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Armenian (hy) -->
+  <url><loc>https://beglaryancenter.am/hy/</loc></url>
+  <url><loc>https://beglaryancenter.am/hy/about-us</loc></url>
+  <url><loc>https://beglaryancenter.am/hy/team</loc></url>
+  <url><loc>https://beglaryancenter.am/hy/gallery</loc></url>
+  <url><loc>https://beglaryancenter.am/hy/news</loc></url>
+  <url><loc>https://beglaryancenter.am/hy/departments</loc></url>
+  <url><loc>https://beglaryancenter.am/hy/contacts</loc></url>
+
+  <!-- English (en) -->
+  <url><loc>https://beglaryancenter.am/en/</loc></url>
+  <url><loc>https://beglaryancenter.am/en/about-us</loc></url>
+  <url><loc>https://beglaryancenter.am/en/team</loc></url>
+  <url><loc>https://beglaryancenter.am/en/gallery</loc></url>
+  <url><loc>https://beglaryancenter.am/en/news</loc></url>
+  <url><loc>https://beglaryancenter.am/en/departments</loc></url>
+  <url><loc>https://beglaryancenter.am/en/contacts</loc></url>
+
+  <!-- Russian (ru) -->
+  <url><loc>https://beglaryancenter.am/ru/</loc></url>
+  <url><loc>https://beglaryancenter.am/ru/about-us</loc></url>
+  <url><loc>https://beglaryancenter.am/ru/team</loc></url>
+  <url><loc>https://beglaryancenter.am/ru/gallery</loc></url>
+  <url><loc>https://beglaryancenter.am/ru/news</loc></url>
+  <url><loc>https://beglaryancenter.am/ru/departments</loc></url>
+  <url><loc>https://beglaryancenter.am/ru/contacts</loc></url>
+</urlset>

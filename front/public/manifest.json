@@ -1,0 +1,27 @@
+{
+  "short_name": "Beglaryan",
+  "name": "Beglaryan Medical Center",
+  "icons": [
+    {
+      "src": "assets/img/favicon/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "assets/img/logo/logo-dark.svg",
+      "type": "image/svg+xml",
+      "sizes": "87x87",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/logo/logo-light.svg",
+      "type": "image/svg+xml",
+      "sizes": "87x87",
+      "purpose": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2b2b2b",
+  "background_color": "#ffffff"
+}

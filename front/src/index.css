@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 :root {
   font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.5;
@@ -37,7 +39,8 @@ body {
 }
 
 .page {
-  min-height: 100dvh;
+  flex: 1;
+  min-height: 0;
   margin: 0;
 }
 
@@ -71,4 +74,35 @@ body {
 .page--not-found a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
+}
+
+/* Заставка: лого плавно «вырастает» из точки (без рывков и overshoot) */
+.route-splash__logo {
+  transform-origin: center center;
+  /* мягкое замедление к концу: scale и opacity идут одной кривой */
+  animation: route-splash-logo-in 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.route-splash--exit {
+  animation: route-splash-slide-out 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes route-splash-logo-in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes route-splash-slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }

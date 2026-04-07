@@ -1,3 +1,5 @@
+import { Header } from '../components/blocks/header/Header'
+
 export function HomePage() {
-  return <main className="page" aria-label="Главная" />
+  return <Header />
 }
