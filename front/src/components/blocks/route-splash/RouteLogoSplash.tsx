@@ -2,19 +2,18 @@ import { useEffect, useLayoutEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import logoDark from '../../../assets/logo-dark.png'
 
-/** Дождаться окончания CSS logo-in (1.15s), короткая пауза, затем уход оверлея */
 const VISIBLE_MS = 1250
 const EXIT_DURATION_MS = 700
 
 type Phase = 'on' | 'exit' | 'off'
 
 export function RouteLogoSplash() {
-  const { pathname } = useLocation()
+  const location = useLocation()
   const [phase, setPhase] = useState<Phase>('on')
 
   useLayoutEffect(() => {
     setPhase('on')
-  }, [pathname])
+  }, [location.key])
 
   useEffect(() => {
     const t1 = window.setTimeout(() => setPhase('exit'), VISIBLE_MS)
@@ -26,7 +25,7 @@ export function RouteLogoSplash() {
       window.clearTimeout(t1)
       window.clearTimeout(t2)
     }
-  }, [pathname])
+  }, [location.key])
 
   if (phase === 'off') return null
 
@@ -38,7 +37,7 @@ export function RouteLogoSplash() {
       aria-hidden="true"
     >
       <img
-        key={pathname}
+        key={location.key}
         src={logoDark}
         alt=""
         className="route-splash__logo h-auto w-[min(88vw,160px)] max-w-full object-contain sm:w-[min(88vw,200px)] md:w-[min(88vw,260px)]"

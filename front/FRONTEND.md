@@ -45,16 +45,20 @@ front/
 ├── eslint.config.js
 ├── public/              статика → корень `dist/` (`/manifest.json`, `/robots.txt`, `/sitemap.xml`, `/assets/...`)
 └── src/
-    ├── main.tsx         точка входа: StrictMode + RouterProvider
+    ├── main.tsx         StrictMode + LanguageProvider + RouterProvider
+    ├── i18n/            локали, сообщения, React Context
     ├── index.css        глобальные стили
     ├── assets/          `logo-dark.png` (шапка + заставка), `logo.svg` и др.
     ├── components/      переиспользуемые части интерфейса
-    │   ├── ui/          атомарные UI-элементы (кнопки, инпуты, бейджи)
+    │   ├── ui/          атомарные UI (`LocaleFlag` и др.)
     │   └── blocks/      составные блоки (карточки, секции, виджеты)
     │       ├── header/
-    │       │       Header.tsx   три блока: лого (flex-1) | nav (shrink-0) | декор (flex-1)
-    │       └── route-splash/
-    │               RouteLogoSplash.tsx   заставка при первом заходе и смене `pathname`
+    │       │       Header.tsx   лого | nav | LanguageSwitcher
+    │       │       LanguageSwitcher.tsx
+    │       ├── route-splash/
+    │       │       RouteLogoSplash.tsx   заставка при первом заходе и смене `pathname`
+    │       └── home-hero/
+    │               HomeHero.tsx   hero главной (мобильный макет: bg + overlay + hy + кнопка #64C5CD)
     ├── layouts/         обёртки страниц (Outlet)
     │   └── RootLayout.tsx
     ├── pages/           экраны по маршрутам
@@ -72,7 +76,7 @@ front/
 
 | Путь   | Компонент       | Описание                    |
 |--------|-----------------|-----------------------------|
-| `/`    | `HomePage`      | главная: только шапка `Header` |
+| `/`    | `HomePage`      | `Header` + мобильная hero (`HomeHero`: фон, затемнение, текст hy, CTA) |
 | `*`    | `NotFoundPage`  | 404, все неизвестные пути   |
 
 Корневой элемент маршрута: `RootLayout` (`path: '/'`) — `Outlet` + **`RouteLogoSplash`** (белый оверлей: плавное появление лого ~1.15s `cubic-bezier(0.16, 1, 0.3, 1)`, пауза до ~1.25s, уход вправо ~0.7s; у `img` `key={pathname}`). Шапка **`Header`** в **`HomePage`**; на 404 шапки нет.
@@ -82,9 +86,24 @@ front/
 ## Точки входа и конфигурация
 
 - **HTML (только корень `front/index.html`):** SEO-мета, фавикон, `manifest`, шрифт Roboto, `noscript`; `div#root` + `<script type="module" src="/src/main.tsx">`. Дубликат `public/index.html` (CRA) не используется — удалён.
-- **JSX-вход:** `src/main.tsx` — создание root, обёртка `StrictMode`, провайдер `RouterProvider` с импортом `router` из `src/routes/router.tsx`.
-- **Сборка:** `vite.config.ts` — плагины `react()`, `tailwindcss()`; алиасы путей при появлении — фиксировать здесь.
+- **JSX-вход:** `src/main.tsx` — `StrictMode` → **`LanguageProvider`** → `RouterProvider` + `router`.
+- **Сборка:** `vite.config.ts` — плагины `react()`, `tailwindcss()`; dev-сервер **`port: 7777`**, `strictPort: true` (порт вне диапазона 1–65535 невозможен).
 - **Tailwind:** в `src/index.css` в начале файла — `@import 'tailwindcss';`, далее кастомные правила.
+
+---
+
+## Локализация (`src/i18n/`)
+
+| Файл | Назначение |
+|------|------------|
+| `types.ts` | `Locale` (`hy` \| `ru` \| `en`), `DEFAULT_LOCALE` = `hy`, ключ `localStorage` `bmc-locale`, перечень `MessageKey` |
+| `messages.ts` | Словари `messages[locale][key]` — добавляйте ключ в `MessageKey` и во все три локали |
+| `LanguageContext.tsx` | `LanguageProvider`, хук **`useLanguage()`** → `{ locale, setLocale, t }` |
+| `index.ts` | Реэкспорт для удобного импорта |
+
+В любом компоненте под провайдером: `const { locale, setLocale, t } = useLanguage()` и `t('nav.home')` и т.д. Выбор языка сохраняется в **`localStorage`**, `document.documentElement.lang` синхронизируется.
+
+**Шапка:** `LanguageSwitcher` — слева SVG-флаги (`LocaleFlag`: AM / RU / US для EN), затем подпись языка.
 
 ---
 
@@ -120,3 +139,9 @@ front/
 - Перенесён контент из старого `public/index.html` (CRA) в корневой `index.html` для Vite: `lang="hy"`, описание и keywords, `theme-color`, `apple-touch-icon` → существующий `logo-dark.svg`, `/manifest.json`, Google Fonts Roboto, `noscript` на русском.
 - Удалён неиспользуемый `public/index.html`. Обновлён `public/manifest.json` (название центра, иконка `favicon.ico` вместо отсутствовавшего `favicon-16x16.ico`, тип `image/svg+xml` для SVG).
 - Заставка как в legacy `beglaryancenter-front` (`Loading.js` + animate.css): `RouteLogoSplash` в `RootLayout`, при каждом `pathname` — оверлей с `logo-dark.png` (scale-in), через ~1 с уход вправо; стили в `index.css`.
+- `HomeHero`: секция под хедером, `min-h-[calc(100dvh-4rem)]`, фон `public/assets/img/hero/hero-bg.png`, `bg-black/50`, тексты через `t()`, CTA → `/about-us` (пока 404).
+
+### 2026-04-08
+
+- i18n: `LanguageProvider` в `main.tsx`, `useLanguage()` / `t(key)`, `hy` по умолчанию, persist в `localStorage`. Сообщения в `src/i18n/messages.ts`, тип ключей `MessageKey`.
+- `LanguageSwitcher` в правой части шапки (флаги слева от подписей). Навигация, hero и 404 переведены на `t(...)`.
