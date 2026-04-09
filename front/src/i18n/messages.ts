@@ -37,6 +37,16 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'Մենք հավատարիմ ենք այն մտածողությանը, որ բժշկությունը միայն ախտորոշում չէ․ այն նաև ուշադրություն, ջերմություն և անվտանգություն է ձեր ընտանիքի համար։',
     'home.careMoment.imageCaption':
       'Նորածնի ձեռքը մեծահասակի ձեռքերի մեջ',
+    'home.news.item1.title':
+      'Մեծ քայլ՝ անպտղության դեմ պայքարում. նոր բաժանմունք է ստեղծվել «Բեգլարյան» ԲԿ-ում',
+    'home.news.item1.imageCaption': 'Ուլտրաձայնային հետազոտություն',
+    'home.news.item2.quote':
+      '«Ունեցեք շատ երեխաներ, որակը պահելով՝ պիտի շատանք»։',
+    'home.news.item2.byline':
+      'մանկաբարձ-գինեկոլոգ ԱՐՄԻՆԵ ՀԱՐՈՒԹՅՈՒՆՅԱՆ',
+    'home.news.item3.title':
+      'Երկու օրգանիզմի շունչ տվողը. մանկաբարձ-գինեկոլոգ Արմինե Հարությունյանի «Հաջողության նոտան»',
+    'home.news.allNews': 'ԲՈԼՈՐ ՆՈՐՈՒԹՅՈՒՆՆԵՐԸ',
     'notFound.message': 'Էջը չի գտնվել։',
     'notFound.home': 'Գլխավոր',
     'stub.message': 'Այս բաժինը պատրաստվում է։',
@@ -80,6 +90,16 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'Мы верим, что медицина — это не только диагнозы и процедуры, но и внимание, тепло и спокойствие для всей вашей семьи.',
     'home.careMoment.imageCaption':
       'Рука новорождённого в руках взрослого',
+    'home.news.item1.title':
+      'Большой шаг в борьбе с бесплодием: в «Бегларян» открыто новое отделение',
+    'home.news.item1.imageCaption': 'Ультразвуковое исследование',
+    'home.news.item2.quote':
+      '«Заводите больше детей — сохраняя качество, мы должны расти численно».',
+    'home.news.item2.byline':
+      'акушер-гинеколог АРМИНЕ АРУТЮНЯН',
+    'home.news.item3.title':
+      'Дыхание двух организмов: акушер-гинеколог Армине Арутюнян в программе «Нота успеха»',
+    'home.news.allNews': 'ВСЕ НОВОСТИ',
     'notFound.message': 'Страница не найдена.',
     'notFound.home': 'На главную',
     'stub.message': 'Раздел в разработке.',
@@ -123,6 +143,16 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'We believe medicine is more than tests and treatments — it is attention, warmth, and a steady sense of safety for your whole family.',
     'home.careMoment.imageCaption':
       "A newborn's hand held gently by an adult",
+    'home.news.item1.title':
+      'A major step against infertility: a new department opens at Beglaryan Medical Center',
+    'home.news.item1.imageCaption': 'Ultrasound scan',
+    'home.news.item2.quote':
+      '"Have more children — while keeping quality, we must grow in number."',
+    'home.news.item2.byline':
+      'Obstetrician-gynecologist ARMINE HARUTYUNYAN',
+    'home.news.item3.title':
+      'Giving breath to two lives: Dr. Armine Harutyunyan on «The Note of Success»',
+    'home.news.allNews': 'ALL NEWS',
     'notFound.message': 'Page not found.',
     'notFound.home': 'Back to home',
     'stub.message': 'This section is coming soon.',
