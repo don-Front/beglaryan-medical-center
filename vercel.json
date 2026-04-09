@@ -1,0 +1,6 @@
+{
+  "installCommand": "cd front && npm ci",
+  "buildCommand": "cd front && npm run build",
+  "outputDirectory": "front/dist",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
