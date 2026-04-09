@@ -22,6 +22,21 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'ԺԱՄԱՆԱԿԱԿԻՑ ԲԺՇԿՈՒԹՅՈՒՆ՝ ՎՍՏԱՀԵԼԻ ԵՎ ՀՈԳԱՏԱՐ ՁԵՐՔԵՐՈՒՄ',
     'home.intro.body':
       'Առողջությունը մարդու կյանքի հիմքն է։ Բեգլարյան բժշկական կենտրոնում մենք առաջարկում ենք ժամանակակից, որակյալ և վստահելի բժշկական ծառայություններ՝ կիրառելով նորագույն տեխնոլոգիաներ և բարձրակարգ մասնագիտական թիմ։ Ձեր առողջությունն ու հանգստությունը մեր առաջնահերթությունն են։',
+    'home.carousel.label': 'Բաժինների սլայդեր',
+    'home.carousel.prev': '- Նախորդ',
+    'home.carousel.next': 'Հաջորդ -',
+    'home.carousel.prevAria': 'Նախորդ սլայդ',
+    'home.carousel.nextAria': 'Հաջորդ սլայդ',
+    'home.carousel.slide.gynecology': 'ԳԻՆԵԿՈԼՈԳԻԱ',
+    'home.carousel.slide.cardiology': 'ԿԱՐԴԻՈԼՈԳԻԱ',
+    'home.carousel.slide.pediatrics': 'ՄԱՆԿԱԿԱՆ ԲԺՇԿՈՒԹՅՈՒՆ',
+    'home.careMoment.kicker': 'ՄԵՐ ՄԱՍԻՆ',
+    'home.careMoment.title':
+      'Յուրաքանչյուր կյանքի պատմություն սկսվում է վստահությունից և խնամքից',
+    'home.careMoment.body':
+      'Մենք հավատարիմ ենք այն մտածողությանը, որ բժշկությունը միայն ախտորոշում չէ․ այն նաև ուշադրություն, ջերմություն և անվտանգություն է ձեր ընտանիքի համար։',
+    'home.careMoment.imageCaption':
+      'Նորածնի ձեռքը մեծահասակի ձեռքերի մեջ',
     'notFound.message': 'Էջը չի գտնվել։',
     'notFound.home': 'Գլխավոր',
     'stub.message': 'Այս բաժինը պատրաստվում է։',
@@ -50,6 +65,21 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'СОВРЕМЕННАЯ МЕДИЦИНА — В НАДЁЖНЫХ И ЗАБОТЛИВЫХ РУКАХ',
     'home.intro.body':
       'Здоровье — основа жизни человека. В медицинском центре Бегларян мы предлагаем современные, качественные и надёжные медицинские услуги с применением передовых технологий и команды высококлассных специалистов. Ваше здоровье и спокойствие — наш приоритет.',
+    'home.carousel.label': 'Слайдер отделений',
+    'home.carousel.prev': '- Назад',
+    'home.carousel.next': 'Далее -',
+    'home.carousel.prevAria': 'Предыдущий слайд',
+    'home.carousel.nextAria': 'Следующий слайд',
+    'home.carousel.slide.gynecology': 'ГИНЕКОЛОГИЯ',
+    'home.carousel.slide.cardiology': 'КАРДИОЛОГИЯ',
+    'home.carousel.slide.pediatrics': 'ПЕДИАТРИЯ',
+    'home.careMoment.kicker': 'О НАС',
+    'home.careMoment.title':
+      'Каждая история жизни начинается с доверия и заботы',
+    'home.careMoment.body':
+      'Мы верим, что медицина — это не только диагнозы и процедуры, но и внимание, тепло и спокойствие для всей вашей семьи.',
+    'home.careMoment.imageCaption':
+      'Рука новорождённого в руках взрослого',
     'notFound.message': 'Страница не найдена.',
     'notFound.home': 'На главную',
     'stub.message': 'Раздел в разработке.',
@@ -78,6 +108,21 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'MODERN MEDICINE — IN CAPABLE AND CARING HANDS',
     'home.intro.body':
       'Health is the foundation of human life. At Beglaryan Medical Center we provide modern, high-quality, and reliable medical care using advanced technology and a highly skilled professional team. Your wellbeing and peace of mind are our priority.',
+    'home.carousel.label': 'Department slides',
+    'home.carousel.prev': '- Previous',
+    'home.carousel.next': 'Next -',
+    'home.carousel.prevAria': 'Previous slide',
+    'home.carousel.nextAria': 'Next slide',
+    'home.carousel.slide.gynecology': 'GYNECOLOGY',
+    'home.carousel.slide.cardiology': 'CARDIOLOGY',
+    'home.carousel.slide.pediatrics': 'PEDIATRICS',
+    'home.careMoment.kicker': 'ABOUT US',
+    'home.careMoment.title':
+      'Every life story begins with trust and care',
+    'home.careMoment.body':
+      'We believe medicine is more than tests and treatments — it is attention, warmth, and a steady sense of safety for your whole family.',
+    'home.careMoment.imageCaption':
+      "A newborn's hand held gently by an adult",
     'notFound.message': 'Page not found.',
     'notFound.home': 'Back to home',
     'stub.message': 'This section is coming soon.',
