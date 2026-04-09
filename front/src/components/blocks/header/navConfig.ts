@@ -14,5 +14,5 @@ export const MAIN_NAV: NavItem[] = [
   { to: '/team', labelKey: 'nav.team' },
   { to: '/gallery', labelKey: 'nav.gallery' },
   { to: '/news', labelKey: 'nav.news' },
-  { to: '/contacts', labelKey: 'nav.contacts' },
+  { to: '/feedback', labelKey: 'nav.contacts' },
 ]

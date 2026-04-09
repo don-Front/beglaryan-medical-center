@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../../../i18n/LanguageContext'
 
 const IMG = {
-  featured: '/assets/img/news/featured-infertility.jpg',
-  quote: '/assets/img/news/expert-quote.jpg',
-  interview: '/assets/img/news/expert-interview.jpg',
+  featured: '/assets/img/news/featured-infertility.png',
+  quote: '/assets/img/news/expert-quote.png',
+  interview: '/assets/img/news/expert-interview.png',
 } as const
 
 export function HomeNewsPreview() {

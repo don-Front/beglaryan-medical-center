@@ -1,8 +1,9 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { RootLayout } from '../layouts/RootLayout'
 import { HomePage } from '../pages/HomePage'
 import { NotFoundPage } from '../pages/NotFoundPage'
 import { StubPage } from '../pages/StubPage'
+import { FeedbackPage } from '../pages/FeedbackPage'
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ export const router = createBrowserRouter([
       { path: 'team', element: <StubPage /> },
       { path: 'gallery', element: <StubPage /> },
       { path: 'news', element: <StubPage /> },
-      { path: 'contacts', element: <StubPage /> },
+      { path: 'contacts', element: <Navigate to="/feedback" replace /> },
+      { path: 'feedback', element: <FeedbackPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

@@ -9,7 +9,7 @@ import { MAIN_NAV } from './navConfig'
 
 function navLinkDesktopClass({ isActive }: { isActive: boolean }) {
   return [
-    'inline-flex whitespace-nowrap rounded-md px-2 py-1.5 text-xs font-medium transition-colors xl:px-2.5 xl:text-sm',
+    'inline-flex whitespace-nowrap rounded-md px-1.5 py-1.5 text-[0.6875rem] font-medium leading-none tracking-tight transition-colors xl:px-2 xl:text-xs 2xl:px-2.5 2xl:text-sm',
     isActive
       ? 'bg-slate-900 text-white'
       : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900',
@@ -33,10 +33,10 @@ export function Header() {
   }
 
   return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center gap-2 px-4 lg:gap-3 lg:px-6">
+    <header className="bg-white">
+      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-2 px-4 lg:justify-start lg:gap-3 lg:px-6">
 
-        <div className="flex min-w-0 flex-1 justify-start lg:flex-1">
+        <div className="flex shrink-0 justify-start">
           <Link
             to="/"
             className="flex min-w-0 max-w-full cursor-pointer items-center rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
@@ -51,7 +51,7 @@ export function Header() {
         </div>
 
         <nav
-          className="hidden min-w-0 flex-1 flex-wrap items-center justify-center gap-x-0.5 gap-y-1 lg:flex xl:gap-1"
+          className="hidden min-w-0 flex-1 flex-nowrap items-center justify-center gap-x-0 lg:flex xl:gap-x-0.5"
           aria-label={t('nav.aria')}
         >
           {MAIN_NAV.map((item) => (
@@ -66,7 +66,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex flex-1 items-center justify-end gap-2 lg:flex-1">
+        <div className="flex shrink-0 items-center justify-end gap-2">
           <div className="hidden lg:block">
             <LanguageSwitcher />
           </div>
