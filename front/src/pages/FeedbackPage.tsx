@@ -1,4 +1,5 @@
 import { FeedbackWriteSection } from '../components/blocks/feedback-form/FeedbackWriteSection'
+import { PageTitleBanner } from '../components/blocks/page-title-banner/PageTitleBanner'
 import { useLanguage } from '../i18n/LanguageContext'
 import type { Locale } from '../i18n/types'
 
@@ -23,16 +24,7 @@ export function FeedbackPage() {
 
   return (
     <main className="flex w-full flex-1 flex-col bg-white pb-10 sm:pb-12">
-      <div className="flex justify-center px-[120px] py-[90px] sm:px-[192px]">
-        <header
-          lang={locale}
-          className="w-fit bg-[#46a1b8] px-[120px] py-2 text-center sm:py-3"
-        >
-          <h1 className="font-sans text-lg font-semibold uppercase tracking-[0.12em] text-white sm:text-xl">
-            {t('nav.contacts')}
-          </h1>
-        </header>
-      </div>
+      <PageTitleBanner title={t('nav.contacts')} locale={locale} />
 
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
         <div className="overflow-hidden rounded-xl bg-slate-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.12)] ring-1 ring-black/[0.06]">

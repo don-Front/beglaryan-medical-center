@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom'
 import { RootLayout } from '../layouts/RootLayout'
 import { HomePage } from '../pages/HomePage'
 import { NotFoundPage } from '../pages/NotFoundPage'
+import { AboutUsPage } from '../pages/AboutUsPage'
 import { StubPage } from '../pages/StubPage'
 import { FeedbackPage } from '../pages/FeedbackPage'
 
@@ -11,7 +12,7 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'about-us', element: <StubPage /> },
+      { path: 'about-us', element: <AboutUsPage /> },
       { path: 'departments', element: <StubPage /> },
       { path: 'team', element: <StubPage /> },
       { path: 'gallery', element: <StubPage /> },
