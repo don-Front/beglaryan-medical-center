@@ -113,12 +113,6 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
     'stub.message': 'Այս բաժինը պատրաստվում է։',
     'about.hero.alt':
       'Վիրահատարան՝ բժիշկների թիմը գործողության ժամանակ',
-    'about.mission.headingLine1': 'ՁԵՐ ԱՌՈՂՋՈՒԹՅՈՒՆԸ',
-    'about.mission.headingLine2': 'ՄԵՐ ԱՌԱՔԵԼՈՒԹՅՈՒՆՆ Է',
-    'about.mission.body':
-      'Մեր նպատակը ձեր առողջությանն ու ընտանեկան բարեկեցությանը պահպանելն է։ Բեգլարյան բժշկական կենտրոնում մենք միավորում ենք տասնամյակների փորձ, ժամանակակից ախտորոշման և բուժման մեթոդներ, բարձր որակով բժշկական ծառայություններ և ամեն հիվանդի նկատմամբ հարգալից, անհատական մոտեցում։',
-    'about.mission.alt':
-      'Բժշկական կենտրոնի մասին՝ մեր առաքելությունը',
     'about.intro.headingLine1': 'ԱՎԵԼԻ ՔԱՆ 100 ՏԱՐՎԱ ՓՈՐՁ,',
     'about.intro.headingLine2': 'ԺԱՄԱՆԱԿԱԿԻՑ ՄԵԹՈԴՆԵՐ,',
     'about.intro.headingLine3': 'ՀՈԳԱՏԱՐ ՎԵՐԱԲԵՐՄՈՒՆՔ',
@@ -126,14 +120,34 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       '«Բեգլարյան» բժշկական կենտրոնը (նախկինում՝ թիվ 2 ծննդատուն, Ընտանիքի պլանվորման և սեռական առողջության կենտրոն) ժամանակակից բազմապրոֆիլ բժշկական կենտրոն է, որը գործում է 1920 թվականից՝ որպես Հայաստանի Հանրապետության առաջին մանկաբարձագինեկոլոգիական ստացիոնար։',
     'about.intro.p2':
       'Շենքի շինարարությունն իրականացվել է ակադեմիկոս Ա. Պ. Թամանյանի նախագծով։ Այն պատկանում է ճարտարապետական կոթողների թվին։ Կենտրոնն ունի հարուստ գրադարան, դասասենյակներ և 180 տեղանոց լսարան։',
-    'about.history.p1':
+    'about.intro.p3':
       'Բեգլարյան ԲԿ-ում աշխատում են բարձր որակավորում ունեցող արհեստավարժ բժիշկներ։ Կենտրոնը կրում է ՀՀ-ում մանկաբարձագինեկոլոգիական դպրոցի հիմնադիրներից մեկի՝ ՀՀ բժշկական գիտությունների ակադեմիայի ակադեմիկոս, գիտության վաստակավոր գործիչ, վաստակավոր բժիշկ, բժշկական գիտությունների դոկտոր, պրոֆեսոր Գագիկ Արտաշեսի Բեգլարյանի անունը։ Նա շուրջ երեք տասնամյակ ղեկավարել է կլինիկան և ԵՊԲՀ մանկաբարձության և գինեկոլոգիայի թիվ 1 ամբիոնը։ Փորձառու պրոֆեսորը տիրապետում էր մանկաբարձագինեկոլոգիական բարդ վիրահատությունների ամբողջ ծավալին։ 1975թ. նա Հայաստանում առաջին անգամ կատարել է ախտորոշիչ-բուժիչ լապարոսկոպիա և հիստերոսկոպիա, որի շնորհիվ հնարավոր է դարձել զարգացման վաղ փուլերում ախտորոշել և բուժել որովայնի խոռոչի օրգանների և էնդոմետրիումի մի շարք ախտաբանական գործընթացներ։',
-    'about.history.p2':
+    'about.intro.p4':
       '1925թ. թիվ 2 ծննդատան բազայի վրա հիմնադրվել է Երևանի պետական բժշկական ինստիտուտի մանկաբարձության և գինեկոլոգիայի ամբիոնը, որը տարբեր տարիներին ղեկավարել են հանրահայտ բժիշկ-գիտնականներ՝ պրոֆեսորներ Գ.Ա. Արեշյանը, Ա.Մ. Ահարոնովը, Բ.Գ. Սայադյանը, Կ.Բ. Ակունցը, Գ.Ա. Բեգլարյանը։ 2022թ. առ այսօր ամբիոնի վարիչը Բեգլարյան ԲԿ-ի գիտության գծով խորհրդատուն է՝ բժշկական գիտությունների դոկտոր, պրոֆեսոր Ա.Գ. Հարությունյանը։',
-    'about.education.p1':
-      'Բացի տեղացիներից, ամբիոնում ուսուցում են անցնում նաև արտերկրից ժամանած մեր հայրենակիցները, ինչպես նաև անգլախոս և ռուսախոս ուսանողներ (4-6-րդ կուրս), կազմակերպվում է մանկաբարձ-գինեկոլոգների մասնագիտական պատրաստման գործընթացը կլինիկական օրդինատուրայում։',
-    'about.education.p2':
-      'Շարունակական բժշկական կրթության շրջանակում կենտրոնում վերապատրաստում է անցնում մայրաքաղաքի և հանրապետության տարբեր մարզերի ծննդօգնության հիմնարկներում աշխատող ավագ և միջին բուժանձնակազմը։ Բժշկական կենտրոնը միաժամանակ գիտական կենտրոն է, որտեղ իրականացվում են մանկաբարձագինեկոլոգիական արդի հիմնախնդիրներին նվիրված գիտական հետազոտություններ, պաշտպանվում են թեկնածուական և դոկտորական ատենախոսություններ։',
+    'about.intro.p5':
+      'Բացի տեղացիներից, ամբիոնում ուսուցում են անցնում նաև արտերկրից ժամանած մեր հայրենակիցները, ինչպես նաև անգլախոս և ռուսախոս ուսանողներ (4-6-րդ կուրս), կազմակերպվում է մանկաբարձ-գինեկոլոգների մասնագիտական պատրաստման գործընթացը կլինիկական օրդինատուրայում։ Շարունակական բժշկական կրթության շրջանակում կենտրոնում վերապատրաստում է անցնում մայրաքաղաքի և հանրապետության տարբեր մարզերի ծննդօգնության հիմնարկներում աշխատող ավագ և միջին բուժանձնակազմը։ Բժշկական կենտրոնը միաժամանակ գիտական կենտրոն է, որտեղ իրականացվում են մանկաբարձագինեկոլոգիական արդի հիմնախնդիրներին նվիրված գիտական հետազոտություններ, պաշտպանվում են թեկնածուական և դոկտորական ատենախոսություններ։',
+    'about.heritage.alt':
+      'Պատմական լուսանկար՝ բժիշկ բժշկական հանդերձանքով',
+    'about.heritage.headingLine1': 'ՁԵՐ ԱՌՈՂՋՈՒԹՅՈՒՆԸ ՄԵՐ',
+    'about.heritage.headingLine2': 'ԱՌԱՔԵԼՈՒԹՅՈՒՆՆ Է',
+    'about.missionDetail.p1':
+      'Մեր առաքելությունն է մատուցել բարձրակարգ և համապարփակ բժշկական ծառայություններ՝ համատեղելով ժամանակակից մեթոդները, տասնամյակների փորձը և հոգատար վերաբերմունքը։ Մենք ձգտում ենք, որ յուրաքանչյուր բուժառու մեզ մոտ գտնի անվտանգ, հոգատար միջավայր՝ ստանալով բարձրակարգ մասնագիտական օգնության ու ջերմ վերաբերմունք։',
+    'about.whyChoose.headingLine1': 'ԻՆՉՈՒ ԸՆՏՐԵԼ ՄԵԶ',
+    'about.whyChoose.item1.title': '100+ տարվա փորձ',
+    'about.whyChoose.item1.body':
+      'Հիմնադրված լինելով 1920թ., մենք շարունակաբար հարստացրել ենք մեր փորձն ու արժանացել վստահության։',
+    'about.whyChoose.item2.title': 'Բարձր որակավորում ունեցող թիմ',
+    'about.whyChoose.item2.body':
+      'Մեզ մոտ աշխատում են առաջատար բժիշկներ՝ գիտական աստիճաններով և միջազգային փորձով։',
+    'about.whyChoose.item3.title': 'Ժամանակակից մոտեցումներ',
+    'about.whyChoose.item3.body':
+      'Լապարոսկոպիկ վիրաբուժությունից մինչև անհաս նորածինների խնամք՝ մենք կիրառում ենք նորագույն մեթոդներ։',
+    'about.whyChoose.item4.title': 'Հոգատար միջավայր',
+    'about.whyChoose.item4.body':
+      'Մենք հասկանում ենք բուժառուի հուզական վիճակը և աջակցում ոչ միայն ֆիզիկապես, այլև հոգեպես։',
+    'about.whyChoose.item5.title': 'Միջազգային կապեր',
+    'about.whyChoose.item5.body':
+      'Մեր համագործակցությունը միջազգային հաստատությունների հետ մեզ պահում է գիտության առաջնագծում։',
     'lang.hy': 'Հայերեն',
     'lang.ru': 'Русский',
     'lang.en': 'English',
@@ -249,12 +263,6 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
     'stub.message': 'Раздел в разработке.',
     'about.hero.alt':
       'Операционная: команда врачей во время операции',
-    'about.mission.headingLine1': 'ВАШЕ ЗДОРОВЬЕ',
-    'about.mission.headingLine2': 'НАША МИССИЯ',
-    'about.mission.body':
-      'Наша цель — сохранение вашего здоровья и благополучия семьи. В медицинском центре Бегларян мы сочетаем десятилетия опыта, современные методы диагностики и лечения и качественную медицинскую помощь с уважительным и индивидуальным подходом к каждому пациенту.',
-    'about.mission.alt':
-      'О медицинском центре — наша миссия',
     'about.intro.headingLine1': 'БОЛЕЕ 100 ЛЕТ ОПЫТА,',
     'about.intro.headingLine2': 'СОВРЕМЕННЫЕ МЕТОДЫ,',
     'about.intro.headingLine3': 'ВНИМАТЕЛЬНОЕ ОТНОШЕНИЕ',
@@ -262,14 +270,34 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'Медицинский центр «Бегларян» (ранее — родильный дом № 2, центр планирования семьи и сексуального здоровья) — современный многопрофильный медицинский центр, работающий с 1920 года как первый в Республике Армения стационар по акушерству и гинекологии.',
     'about.intro.p2':
       'Здание построено по проекту академика А. П. Таманяна и относится к числу архитектурных памятников. В центре есть богатая библиотека, учебные аудитории и зал на 180 мест.',
-    'about.history.p1':
+    'about.intro.p3':
       'В Бегларян МЦ работают высококвалифицированные опытные врачи. Центр носит имя одного из основателей армянской школы акушерства и гинекологии — академика НАМН РА, заслуженного деятеля науки, заслуженного врача, доктора медицинских наук, профессора Гагика Арташесовича Бегларяна. Около трёх десятилетий он руководил клиникой и кафедрой акушерства и гинекологии № 1 ЕГМУ. Опытный профессор владел полным объёмом сложных акушерско-гинекологических операций. В 1975 году он впервые в Армении выполнил диагностическую и лечебную лапароскопию и гистероскопию, что позволило на ранних стадиях диагностировать и лечить ряд патологических процессов органов брюшной полости и эндометрия.',
-    'about.history.p2':
+    'about.intro.p4':
       'В 1925 году на базе родильного дома № 2 была основана кафедра акушерства и гинекологии Ереванского государственного медицинского института, которую в разные годы возглавляли известные учёные-врачи: профессора Г. А. Арешян, А. М. Ахаронов, Б. Г. Саядян, К. Б. Акунц, Г. А. Бегларян. С 2022 года по настоящее время заведующим кафедрой является научный консультант Бегларян МЦ, доктор медицинских наук, профессор А. Г. Арутюнян.',
-    'about.education.p1':
-      'Наряду с местными обучение на кафедре проходят также соотечественники из-за рубежа, а также англоязычные и русскоязычные студенты (4–6 курсы); организуется профессиональная подготовка акушеров-гинекологов в клинической ординатуре.',
-    'about.education.p2':
-      'В рамках непрерывного медицинского образования в центре проходят переподготовку старший и средний медицинский персонал родильных учреждений столицы и различных областей республики. Медицинский центр одновременно является научным центром, где ведутся исследования по актуальным проблемам акушерства и гинекологии, защищаются кандидатские и докторские диссертации.',
+    'about.intro.p5':
+      'Наряду с местными обучение на кафедре проходят также соотечественники из-за рубежа, а также англоязычные и русскоязычные студенты (4–6 курсы); организуется профессиональная подготовка акушеров-гинекологов в клинической ординатуре. В рамках непрерывного медицинского образования в центре проходят переподготовку старший и средний медицинский персонал родильных учреждений столицы и различных областей республики. Медицинский центр одновременно является научным центром, где ведутся исследования по актуальным проблемам акушерства и гинекологии, защищаются кандидатские и докторские диссертации.',
+    'about.heritage.alt':
+      'Исторический снимок: врач в медицинской форме',
+    'about.heritage.headingLine1': 'ВАШЕ ЗДОРОВЬЕ',
+    'about.heritage.headingLine2': 'НАША МИССИЯ',
+    'about.missionDetail.p1':
+      'Наша миссия — оказывать качественные и комплексные медицинские услуги, сочетая современные методы, десятилетия опыта и внимательное отношение. Мы стремимся к тому, чтобы каждый пациент у нас находил безопасную, заботливую среду, получая квалифицированную профессиональную помощь и тёплое отношение.',
+    'about.whyChoose.headingLine1': 'ПОЧЕМУ ВЫБИРАЮТ НАС',
+    'about.whyChoose.item1.title': 'Более 100 лет опыта',
+    'about.whyChoose.item1.body':
+      'Основанные в 1920 году, мы непрерывно обогащали свой опыт и заслуживали доверие.',
+    'about.whyChoose.item2.title': 'Команда высокой квалификации',
+    'about.whyChoose.item2.body':
+      'У нас работают ведущие врачи с учёными степенями и международным опытом.',
+    'about.whyChoose.item3.title': 'Современные подходы',
+    'about.whyChoose.item3.body':
+      'От лапароскопической хирургии до ухода за недоношенными новорождёнными — мы применяем новейшие методы.',
+    'about.whyChoose.item4.title': 'Заботливая среда',
+    'about.whyChoose.item4.body':
+      'Мы понимаем эмоциональное состояние пациента и поддерживаем не только физически, но и психологически.',
+    'about.whyChoose.item5.title': 'Международные связи',
+    'about.whyChoose.item5.body':
+      'Сотрудничество с международными институтами удерживает нас на передовой науки.',
     'lang.hy': 'Հայերեն',
     'lang.ru': 'Русский',
     'lang.en': 'English',
@@ -385,12 +413,6 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
     'stub.message': 'This section is coming soon.',
     'about.hero.alt':
       'Operating room: surgical team during a procedure',
-    'about.mission.headingLine1': 'YOUR HEALTH',
-    'about.mission.headingLine2': 'IS OUR MISSION',
-    'about.mission.body':
-      'Our goal is to protect your health and your family’s well-being. At Beglaryan Medical Center we bring together decades of experience, modern diagnostic and treatment methods, and high-quality care with a respectful, personalized approach to every patient.',
-    'about.mission.alt':
-      'About the medical center — our mission',
     'about.intro.headingLine1': 'MORE THAN 100 YEARS OF EXPERIENCE,',
     'about.intro.headingLine2': 'MODERN METHODS,',
     'about.intro.headingLine3': 'ATTENTIVE CARE',
@@ -398,14 +420,34 @@ export const messages: Record<Locale, Record<MessageKey, string>> = {
       'Beglaryan Medical Center (formerly Maternity Hospital No. 2, Family Planning and Sexual Health Center) is a modern multidisciplinary medical center that has operated since 1920 as the Republic of Armenia’s first obstetrics and gynecology inpatient facility.',
     'about.intro.p2':
       'The building was constructed to a design by Academician A. P. Tamanyan and is counted among architectural monuments. The center has a rich library, classrooms, and a 180-seat auditorium.',
-    'about.history.p1':
+    'about.intro.p3':
       'Highly qualified, experienced physicians work at Beglaryan MC. The center is named after one of the founders of the Armenian school of obstetrics and gynecology — Academician of the National Academy of Medical Sciences of Armenia, Honored Scientist, Honored Physician, Doctor of Medical Sciences, Professor Gagik Artashesi Beglaryan. For nearly three decades he led the clinic and the No. 1 Department of Obstetrics and Gynecology at YSMU. The experienced professor mastered the full scope of complex obstetric and gynecologic surgery. In 1975 he was the first in Armenia to perform diagnostic and therapeutic laparoscopy and hysteroscopy, making it possible to diagnose and treat at early stages a range of pathological processes in the abdominal organs and endometrium.',
-    'about.history.p2':
+    'about.intro.p4':
       'In 1925, on the basis of Maternity Hospital No. 2, the Department of Obstetrics and Gynecology of the Yerevan State Medical Institute was founded; it was headed in different years by renowned physician-scientists Professors G. A. Areshyan, A. M. Aharonov, B. G. Sayadyan, K. B. Akunts, and G. A. Beglaryan. From 2022 to the present, the department chair is Science Consultant of Beglaryan MC, Doctor of Medical Sciences, Professor A. G. Harutyunyan.',
-    'about.education.p1':
-      'In addition to local trainees, the department teaches compatriots arriving from abroad, as well as English- and Russian-speaking students (years 4–6); professional training of obstetrician-gynecologists is organized in clinical residency.',
-    'about.education.p2':
-      'Within continuing medical education, senior and middle medical staff from maternity facilities in the capital and regions of the republic undergo retraining at the center. The medical center is also a scientific hub where research on current issues in obstetrics and gynecology is conducted and candidate and doctoral dissertations are defended.',
+    'about.intro.p5':
+      'In addition to local trainees, the department teaches compatriots arriving from abroad, as well as English- and Russian-speaking students (years 4–6); professional training of obstetrician-gynecologists is organized in clinical residency. Within continuing medical education, senior and middle medical staff from maternity facilities in the capital and regions of the republic undergo retraining at the center. The medical center is also a scientific hub where research on current issues in obstetrics and gynecology is conducted and candidate and doctoral dissertations are defended.',
+    'about.heritage.alt':
+      'Historical photograph: physician in medical attire',
+    'about.heritage.headingLine1': 'YOUR HEALTH',
+    'about.heritage.headingLine2': 'IS OUR MISSION',
+    'about.missionDetail.p1':
+      'Our mission is to provide high-quality, comprehensive medical care by combining modern methods, decades of experience, and a caring approach. We want every patient who comes to us to find a safe, supportive environment and receive skilled professional help with warmth and respect.',
+    'about.whyChoose.headingLine1': 'WHY CHOOSE US',
+    'about.whyChoose.item1.title': '100+ years of experience',
+    'about.whyChoose.item1.body':
+      'Founded in 1920, we have continuously built on our experience and earned trust.',
+    'about.whyChoose.item2.title': 'A highly qualified team',
+    'about.whyChoose.item2.body':
+      'Leading physicians with academic degrees and international experience work with us.',
+    'about.whyChoose.item3.title': 'Modern approaches',
+    'about.whyChoose.item3.body':
+      'From laparoscopic surgery to care for premature newborns, we use the latest methods.',
+    'about.whyChoose.item4.title': 'A caring environment',
+    'about.whyChoose.item4.body':
+      'We understand the patient’s emotional state and offer support not only physically but also psychologically.',
+    'about.whyChoose.item5.title': 'International ties',
+    'about.whyChoose.item5.body':
+      'Our cooperation with international institutions keeps us at the forefront of medical science.',
     'lang.hy': 'Հայերեն',
     'lang.ru': 'Русский',
     'lang.en': 'English',
