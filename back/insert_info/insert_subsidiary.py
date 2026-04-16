@@ -1,5 +1,5 @@
 """
-Вставка строки в subsidiary: id, url, parent_id (ссылка на строку в parents), content, style.
+Вставка строки в subsidiary: id, url, parent_id (ссылка на строку в parents), content, style, bloc_type.
 
 Колонка url — обязательный адрес/путь страницы с фронта (например Ginekologia/), чтобы знать,
 к какой странице относится блок.
@@ -14,8 +14,11 @@ content — либо многоязычный текст (am / ru / en), либ�
       url VARCHAR(500),
       parent_id INT NOT NULL REFERENCES parents(parent_id) ON DELETE CASCADE,
       content TEXT,
-      style TEXT
+      style TEXT,
+      bloc_type VARCHAR(100)
   );
+
+  Уже созданная таблица: migrations/002_subsidiary_add_bloc_type.sql
 
 В колонку subsidiary.parent_id записывается то же значение, что в parents.parent_id
 (внешний ключ на parents(parent_id); см. migrations/001_subsidiary_fk_parents_parent_id.sql).
@@ -23,7 +26,8 @@ content — либо многоязычный текст (am / ru / en), либ�
 parents.parent_id.
 
 Multipart: файл изображения передаётся полем content (тип File), как и ключ content в JSON;
-остальные поля те же: id, parent_id, style, url или page_url; подписи — content_am / content_ru / content_en.
+остальные поля: id, parent_id, style, bloc_type (например photo), url или page_url;
+подписи — content_am / content_ru / content_en.
 """
 from __future__ import annotations
 
@@ -152,6 +156,7 @@ def insert_subsidiary(
     parent_ref: Any,
     content: Any,
     style: str,
+    bloc_type: str = "",
     *,
     photo_file=None,
     photo_filename: str | None = None,
@@ -160,6 +165,7 @@ def insert_subsidiary(
     Вставка в subsidiary.
 
     - url — всегда адрес страницы с фронта (обязателен), не путь к файлу.
+    - bloc_type — тип блока с конструктора (например photo, text).
     - Без photo_file: content — текст (am/ru/en).
     - С photo_file: файл в media/photos; путь photos/... хранится в content.path, url в БД — страница.
     - Если id уже есть — строка обновляется (UPSERT по первичному ключу id).
@@ -175,6 +181,7 @@ def insert_subsidiary(
         )
 
     style = style or ""
+    bloc_type = (bloc_type or "").strip()
     parent_pk = _parse_int(parent_ref, "parent_id")
 
     if photo_file is not None:
@@ -207,16 +214,17 @@ def insert_subsidiary(
                 stored_parent_id = _resolve_parents_parent_id_column(cursor, parent_pk)
                 cursor.execute(
                     """
-                    INSERT INTO subsidiary (id, url, parent_id, content, style)
-                    VALUES (%s, %s, %s, %s, %s)
+                    INSERT INTO subsidiary (id, url, parent_id, content, style, bloc_type)
+                    VALUES (%s, %s, %s, %s, %s, %s)
                     ON CONFLICT (id) DO UPDATE SET
                         url = EXCLUDED.url,
                         parent_id = EXCLUDED.parent_id,
                         content = EXCLUDED.content,
-                        style = EXCLUDED.style
-                    RETURNING id, url, parent_id, content, style
+                        style = EXCLUDED.style,
+                        bloc_type = EXCLUDED.bloc_type
+                    RETURNING id, url, parent_id, content, style, bloc_type
                     """,
-                    (row_id, db_url, stored_parent_id, content_str, style),
+                    (row_id, db_url, stored_parent_id, content_str, style, bloc_type),
                 )
                 row = cursor.fetchone()
                 cols = [c[0] for c in cursor.description]
@@ -237,16 +245,17 @@ def insert_subsidiary(
                     stored_parent_id = _resolve_parents_parent_id_column(cursor, parent_pk)
                     cursor.execute(
                         """
-                        INSERT INTO subsidiary (id, url, parent_id, content, style)
-                        VALUES (%s, %s, %s, %s, %s)
+                        INSERT INTO subsidiary (id, url, parent_id, content, style, bloc_type)
+                        VALUES (%s, %s, %s, %s, %s, %s)
                         ON CONFLICT (id) DO UPDATE SET
                             url = EXCLUDED.url,
                             parent_id = EXCLUDED.parent_id,
                             content = EXCLUDED.content,
-                            style = EXCLUDED.style
-                        RETURNING id, url, parent_id, content, style
+                            style = EXCLUDED.style,
+                            bloc_type = EXCLUDED.bloc_type
+                        RETURNING id, url, parent_id, content, style, bloc_type
                         """,
-                        (row_id, db_url, stored_parent_id, content_str, style),
+                        (row_id, db_url, stored_parent_id, content_str, style, bloc_type),
                     )
                     row = cursor.fetchone()
                     cols = [c[0] for c in cursor.description]
@@ -271,6 +280,7 @@ def _insert_subsidiary_api(request):
             row_id = (request.POST.get("id") or "").strip()
             parent_ref = request.POST.get("parent_id")
             style = request.POST.get("style") or ""
+            blk = (request.POST.get("bloc_type") or "").strip()
             url_hint = (request.POST.get("page_url") or request.POST.get("url") or "").strip()
 
             cap = {
@@ -285,6 +295,7 @@ def _insert_subsidiary_api(request):
                     parent_ref,
                     cap,
                     style,
+                    blk,
                     photo_file=uploaded,
                     photo_filename=getattr(uploaded, "name", None),
                 )
@@ -308,6 +319,7 @@ def _insert_subsidiary_api(request):
         row_id = (request.POST.get("id") or "").strip()
         parent_ref = request.POST.get("parent_id")
         style = request.POST.get("style")
+        blk = (request.POST.get("bloc_type") or "").strip()
         url_field = (request.POST.get("page_url") or request.POST.get("url") or "").strip()
         raw_content = request.POST.get("content")
         if raw_content:
@@ -322,7 +334,9 @@ def _insert_subsidiary_api(request):
                 "en": request.POST.get("content_en") or "",
             }
         try:
-            row = insert_subsidiary(row_id, url_field, parent_ref, content, style or "")
+            row = insert_subsidiary(
+                row_id, url_field, parent_ref, content, style or "", blk
+            )
         except ValueError as exc:
             return JsonResponse({"error": str(exc)}, status=400)
         except IntegrityError as exc:
@@ -349,6 +363,7 @@ def _insert_subsidiary_api(request):
     page_url = data.get("page_url") if data.get("page_url") is not None else data.get("url")
     parent_ref = data.get("parent_id")
     style = data.get("style")
+    blk = str(data.get("bloc_type", "")).strip()
     content = data.get("content")
 
     if row_id is None or parent_ref is None or style is None:
@@ -378,6 +393,7 @@ def _insert_subsidiary_api(request):
             parent_ref,
             content,
             str(style),
+            blk,
         )
     except ValueError as exc:
         return JsonResponse({"error": str(exc)}, status=400)
