@@ -28,6 +28,7 @@ from create_block.save_info_to_db import save_info_to_db
 from create_block.Select_info_to_db import select_info_to_db
 from insert_info.inssert_info import insert_parent_block_api
 from insert_info.insert_subsidiary import insert_subsidiary_api
+from select_info.select_info import select_by_url_lang
 from login.login import login_view
 
 urlpatterns = [
@@ -53,5 +54,7 @@ urlpatterns = [
     path('api/parents/block', insert_parent_block_api),
     path('api/subsidiary/', insert_subsidiary_api, name='insert_subsidiary'),
     path('api/subsidiary', insert_subsidiary_api),
+    path('api/page-by-url/', select_by_url_lang, name='page_by_url_lang'),
+    path('api/page-by-url', select_by_url_lang),
     path('', include('messages.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
